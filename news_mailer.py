@@ -34,9 +34,12 @@ GENERAL_FEEDS = [
 ]
 
 GEO_FEEDS = [
-    "https://www.nasa.gov/feed/",                                       # NASA
-    "https://www.esa.int/rssfeed/Our_Activities/Observing_the_Earth",   # ESA Earth Observation
-    "https://www.space.com/feeds/all",                                  # Space.com
+    "https://www.nasa.gov/feed/",         # NASA
+    "https://www.space.com/feeds/all",    # Space.com
+    # ESA-feed verwijderd: bleek leeg te zijn (feed is technisch geldig
+    # maar publiceert geen items meer op deze URL). Als je ESA later
+    # terug wil toevoegen: zoek een actieve feed via
+    # https://www.esa.int/Services/RSS_Feeds
 ]
 
 GEO_KEYWORDS = [
@@ -94,16 +97,20 @@ def fetch_all_general(max_age_hours: int = 30, per_feed: int = 5):
 
 
 def fetch_all_geo(max_age_hours: int = 48, per_feed: int = 10):
-    """Ruimer tijdsvenster voor geo-nieuws, want die feeds posten minder frequent."""
+    """
+    Ruimer tijdsvenster voor geo-nieuws, want die feeds posten minder frequent.
+
+    Geen trefwoordfilter hier: NASA/ESA/Space.com zijn zelf al 100%
+    ruimtevaart/aardobservatie-content, dus een keyword-filter erbovenop
+    gooide relevante artikelen weg die toevallig niet exact "satellite"
+    of "GIS" in titel/samenvatting hadden staan (bv. een Mars-rover-
+    artikel of een telescoopverhaal).
+    """
     all_articles = []
     for url in GEO_FEEDS:
         items = fetch_feed(url, max_age_hours=max_age_hours, max_items=per_feed)
-        relevant = [
-            a for a in items
-            if any(kw.lower() in (a["title"] + " " + a["summary"]).lower() for kw in GEO_KEYWORDS)
-        ]
-        print(f"{url} -> {len(items)} artikelen, {len(relevant)} geo-relevant")
-        all_articles.extend(relevant)
+        print(f"{url} -> {len(items)} artikelen")
+        all_articles.extend(items)
     return all_articles
 
 
@@ -193,7 +200,7 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     6. Betrouwbaarheid van de beschikbare bronnen
 
     Maak voor algemeen nieuws een mix van:
-    - 1 kernartikel dat specifiek over België gaat (Belgisch binnenlands nieuws, Belgisch beleid, of een gebeurtenis in België) — niet zomaar een artikel van een Belgische nieuwssite over een ander land."
+    - 1 kernartikel dat specifiek over België gaat (Belgisch binnenlands nieuws, Belgisch beleid, of een gebeurtenis in België) — niet zomaar een artikel van een Belgische nieuwssite over een ander land.
     - 4 tot 5 kernartikelen over internationale ontwikkelingen uit de overige betrouwbare bronnen.
 
     Wanneer meerdere artikelen over dezelfde gebeurtenis gaan:
