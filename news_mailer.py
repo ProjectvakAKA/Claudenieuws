@@ -35,10 +35,9 @@ GENERAL_FEEDS = [
 
 
 GEO_FEEDS = [
-    "https://geospatialworld.net",
-    "https://spacenews.com",
-    "https://geoweeknews.com",
-    "https://bellingcat.com"
+    "https://geospatialworld.net/feed",
+	"https://spacenews.com/feed",
+	"https://www.bellingcat.com/feed",
 ]
 
 GEO_KEYWORDS = [
