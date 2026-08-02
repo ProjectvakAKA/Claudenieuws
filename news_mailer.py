@@ -200,7 +200,7 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     6. Betrouwbaarheid van de beschikbare bronnen
 
     Maak voor algemeen nieuws een mix van:
-    - 1 kernartikel dat specifiek over België gaat (Belgisch binnenlands nieuws, Belgisch beleid, of een gebeurtenis in België) — niet zomaar een artikel van een Belgische nieuwssite over een ander land.
+    - 1 kernartikel dat specifiek over België gaat (Belgisch binnenlands nieuws, Belgisch beleid, of een gebeurtenis in België) — niet zomaar een artikel van een Belgische nieuwssite over een ander land. Ga na dat dit nieuws effectief relevant is, het gaat bijvoorbeeld over politieke zaken of statistieken over grote belgische onderzoeken
     - 4 tot 5 kernartikelen over internationale ontwikkelingen uit de overige betrouwbare bronnen.
 
     Wanneer meerdere artikelen over dezelfde gebeurtenis gaan:
@@ -323,6 +323,7 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     - Sorteer artikelen op belangrijkheid.
     - Produceer uitsluitend geldige HTML.
     - Schrijf geen tekst buiten de HTML-tags.
+    - Gebruik geen titels, functies of kwalificaties (zoals 'voormalig', 'huidig', 'minister van...') tenzij deze letterlijk in de brontekst staan. Bij twijfel: laat de titel weg.
     </VALIDATION>
     """
 
