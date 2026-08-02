@@ -193,7 +193,7 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     6. Betrouwbaarheid van de beschikbare bronnen
 
     Maak voor algemeen nieuws een mix van:
-    - 1 kernartikel over België (bij voorkeur een bron met .be in de URL, zoals vrt.be of tijd.be)
+    - 1 kernartikel dat specifiek over België gaat (Belgisch binnenlands nieuws, Belgisch beleid, of een gebeurtenis in België) — niet zomaar een artikel van een Belgische nieuwssite over een ander land."
     - 4 tot 5 kernartikelen over internationale ontwikkelingen uit de overige betrouwbare bronnen.
 
     Wanneer meerdere artikelen over dezelfde gebeurtenis gaan:
