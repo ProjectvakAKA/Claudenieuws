@@ -48,7 +48,6 @@ GEO_FEEDS = [
     "https://bellingcat.com"
 ]
 
-]
 
 GEO_KEYWORDS = [
     "satellite", "satelliet", "geospatial", "geo-intelligence", "gis",
