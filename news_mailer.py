@@ -35,25 +35,18 @@ GENERAL_FEEDS = [
 
 
 GEO_FEEDS = [
-    # 1. Commercial & Industry Tech (Markets, Software, Trends)
     "https://geospatialworld.net",
-    
-    # 2. Earth Observation & Satellite Business (Companies, Hardware, Launches)
     "https://spacenews.com",
-    
-    # 3. Remote Sensing, Mapping, & Tech Deep-Dives
     "https://geoweeknews.com",
-    
-    # 4. Open-Source Intelligence & Public Satellite Analysis
     "https://bellingcat.com"
 ]
-
 
 GEO_KEYWORDS = [
     "satellite", "satelliet", "geospatial", "geo-intelligence", "gis",
     "remote sensing", "aardobservatie", "earth observation", "drone",
     "mapping", "cartograf", "location intelligence",
 ]
+
 
 
 # ---------------------------------------------------------------------------
