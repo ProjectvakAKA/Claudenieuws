@@ -1,0 +1,34 @@
+name: Daily Newsletter
+
+on:
+  schedule:
+    # 07:00 Belgische tijd (zomertijd = UTC+2, wintertijd = UTC+1).
+    # Cron gebruikt altijd UTC, dus dit is 05:00 UTC -> 07:00 zomertijd.
+    # Pas eventueel aan naar 06:00 UTC in de winter als je exact 07:00 wil blijven.
+    - cron: "0 5 * * *"
+  workflow_dispatch: {}   # laat je toe om ook handmatig te runnen via de GitHub UI
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run newsletter script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: python news_mailer.py
