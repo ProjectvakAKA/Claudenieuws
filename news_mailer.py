@@ -159,8 +159,8 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     Maak een dagelijkse HTML-nieuwsbrief die uitsluitend gebaseerd is op de aangeleverde nieuwsitems.
 
     De nieuwsbrief bestaat uit:
-    - ongeveer 80% algemeen wereldnieuws
-    - ongeveer 20% geo-intelligence / geospatial nieuws
+    - ongeveer 50% algemeen wereldnieuws
+    - ongeveer 50% geo-intelligence / geospatial nieuws
 
     Selecteer alleen de belangrijkste gebeurtenissen van vandaag.
     Vat dubbele berichten samen tot één artikel.
@@ -252,14 +252,14 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     De nieuwsbrief bevat:
     - 1 belangrijk Belgisch nieuwsartikel
     - 4 tot 5 belangrijke internationale nieuwsartikelen
-    - 1 tot 2 geo-intelligence artikelen
+    - 4 tot 6 geo-intelligence artikelen
 
     Wanneer geen relevante geo-artikelen beschikbaar zijn,
     toon de sectie toch en vermeld dat er vandaag geen relevante geo-intelligence ontwikkelingen waren.
 
     Houd de totale verhouding ongeveer:
-    - 80% algemeen nieuws (België + internationaal)
-    - 20% geo-intelligence.
+    - 50% algemeen nieuws (België + internationaal)
+    - 50% geo-intelligence.
     </CONTENT_REQUIREMENTS>
 
     <OUTPUT_FORMAT>
@@ -318,7 +318,7 @@ def build_newsletter_with_gemini(general_articles, geo_articles) -> str:
     - Gebruik uitsluitend bronlinks uit de input.
     - Vermeld elke gebeurtenis slechts één keer.
     - Zorg dat er één Belgisch kernartikel en 4-5 internationale artikelen zijn.
-    - Houd ongeveer 80% algemeen nieuws en 20% geo-intelligence aan.
+    - Houd ongeveer 50% algemeen nieuws en 50% geo-intelligence aan.
     - Sorteer artikelen op belangrijkheid.
     - Produceer uitsluitend geldige HTML.
     - Schrijf geen tekst buiten de HTML-tags.
