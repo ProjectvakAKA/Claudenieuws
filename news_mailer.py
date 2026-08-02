@@ -33,13 +33,21 @@ GENERAL_FEEDS = [
     "https://www.lemonde.fr/international/rss_full.xml",       # Le Monde - International
 ]
 
+
 GEO_FEEDS = [
-    "https://www.nasa.gov/feed/",         # NASA
-    "https://www.space.com/feeds/all",    # Space.com
-    # ESA-feed verwijderd: bleek leeg te zijn (feed is technisch geldig
-    # maar publiceert geen items meer op deze URL). Als je ESA later
-    # terug wil toevoegen: zoek een actieve feed via
-    # https://www.esa.int/Services/RSS_Feeds
+    # 1. Commercial & Industry Tech (Markets, Software, Trends)
+    "https://geospatialworld.net",
+    
+    # 2. Earth Observation & Satellite Business (Companies, Hardware, Launches)
+    "https://spacenews.com",
+    
+    # 3. Remote Sensing, Mapping, & Tech Deep-Dives
+    "https://geoweeknews.com",
+    
+    # 4. Open-Source Intelligence & Public Satellite Analysis
+    "https://bellingcat.com"
+]
+
 ]
 
 GEO_KEYWORDS = [
