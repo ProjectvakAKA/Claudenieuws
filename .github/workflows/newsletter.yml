@@ -1,11 +1,7 @@
 name: Daily Newsletter
 
 on:
-  schedule:
-    # 07:00 Belgische tijd (zomertijd = UTC+2, wintertijd = UTC+1).
-    # Cron gebruikt altijd UTC, dus dit is 05:00 UTC -> 07:00 zomertijd.
-    # Pas eventueel aan naar 06:00 UTC in de winter als je exact 07:00 wil blijven.
-    - cron: "*/5 * * * *"
+
   workflow_dispatch: {}   # laat je toe om ook handmatig te runnen via de GitHub UI
 
 jobs:
